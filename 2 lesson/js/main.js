@@ -29,6 +29,7 @@ class ProductsList{
         }
         return sum;
     }
+    // let res = this.allProducts.reduce((sum, item) => += item.price, 0);
     
 }
 
@@ -60,24 +61,28 @@ class ShopBasket {
 		this.img = img; 
     }
 
-    addItem() {
+    addGoods() {
 
     }
 
-    deleteItem() {
+    removeGoods() {
+
+    }
+
+    changeGoods(){
+
+    }
+
+    render(){
 
     }
 
 }
 
 class ItemShopBasket {
-    constructor(){
-
-    }
-
-    detailedInfo(){
-        
-    }
+   render(){
+       
+   }
 }
 
 
