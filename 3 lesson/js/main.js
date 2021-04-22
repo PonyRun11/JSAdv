@@ -11,7 +11,7 @@ class List {
     }
     getJson(url) { // Метод для получения данных из внешнего API
         return fetch(url ? url : `${API + this.url}`) // делаем ajax запрос. если url передается , то мы коннектимся к нему, если нет, то api + url
-        .then(result => result.json())
+        .then(result => result.json()) //возвращает промис , поэтому при выхову нежно снова ставить обработчик then.
         .catch(error => {
             console.log(error);
         })
@@ -20,7 +20,7 @@ class List {
         this.goods = [...data]; //распаковываем его 
         this.render(); // вызываем 
     }
-    render() { // вывод всех товаров
+    render() { // общий метод для вывода товаров и каталога и корзинки 
         const block = document.querySelector(this.container);
         for (let product of this.goods) { // в цикле обходим массив товаров 
             const productObj = new this.list[this.constructor.name](product); // вызываем конструктор: сделали объект товара либо CartItem, либо ProductItem this.list - это наш объект[свойтсва this.constructor.name - это имя класса, который вызывает наш товар, либо каталог, либо корзинка](на вход принимаем объект товар). каждый товар передаем в качестве параметра в конструктор класса товар
@@ -28,11 +28,11 @@ class List {
             block.insertAdjacentHTML('beforeend', productObj.render()); // с помощью объекта вызываем render
         }
     }
+    _init(){
+        return false // заглушка для наследования в других классах чтобы можно было переопределять/ далее это регистрация события
+    }
     calcSum(){
         return this.allProducts.reduce((accum, item) => accum += item.price, 0);
-    }
-    _init(){
-        return false // заглушка для наследования в других классах чтобы можно было переопределять
     }
 }
 
@@ -43,14 +43,14 @@ class Item { //класс товара
         this.id_product = el.id_product;
         this.img = img;
     }
-    render(){ // генерация товара для каталога товаров
+    render(){ // генерация товара для каталога товаров. в верстку кнопке мы добавили data-атрибуты id, name, price
         return `<div class="product-item" data-id="${this.id_product}">
                 <img src="${this.img}" alt="Some img">
                 <div class="desc">
                     <h3>${this.product_name}</h3>
                     <p>${this.price} $</p>
                     <button class="buy-btn"
-                    data-id="${this.id_product}"
+                    data-id="${this.id_product}" 
                     data-name=${this.product_name}"
                     data-price="${this.price}">Купить</button>
                 </div>
@@ -65,7 +65,7 @@ class ProductsList extends List {
         super(url, container) // вызываем  конструктор базового класса
         this.cart = cart; //
         this.getJson() // вызывается из базового класса List. получаем объект js и запускается обработчик then
-            .then(data => this.handleData(data)); //тут мы передаем в качестве параметра в handleData
+            .then(data => this.handleData(data)); //объект data полученый из getJson мы передаем в качестве параметра в функцию handleData
     }
     _init() { //как только мы вызываем конструктор вызывается Init
         document.querySelector(this.container).addEventListener('click', e => { //привязываем событие клик к кнопке купить
@@ -92,7 +92,7 @@ class Cart extends List { //корзинка потомок класса List
             .then(data => {
                 if(data.result === 1) { //если полуаем 1, то связь есть
                     let productId = +element.dataset['id']; //получаем id товара
-                    let find = this.allProducts.find(product => product.id_product === productId);// find - перебираем массив пока не выполнится функция возращаем true 
+                    let find = this.allProducts.find(product => product.id_product === productId);// find - перебираем массив пока не выполнится функция возращаем true . ищем в массиве товаров корзины совпадение (каждый товар массива => берем id каждого товара массива === к id добавляемого товара)
                     if(find) { //если товар нашелся, то мы добавляем количество
                         find.quantity++;
                         this._updateCart(find); //обновляем цену
@@ -121,7 +121,7 @@ class Cart extends List { //корзинка потомок класса List
                         find.quantity--;
                         this._updateCart(find); //обновляем верстку
                     } else { // если 1 товар
-                        this.allProducts.splice(this.allProducts.indexOf(find), 1); //находим первый элемент  и удалем товар из массива  (с какого индекса, сколько удаляем)
+                        this.allProducts.splice(this.allProducts.indexOf(find), 1); //находим первый элемент и удалем товар из массива  (с какого индекса(с первого вхождения в наш массив), сколько удаляем)
                         document.querySelector(`.cart-item[data-id="${productId}"]`).remove();//стираем из верстки
                     }
                 }else {
@@ -148,7 +148,7 @@ class Cart extends List { //корзинка потомок класса List
 
 class CartItem extends Item {
     constructor(el, img = "https://placehold.it/50x100") { //вызываем конструктор
-        super(el, img); // на вход даем объект товар и получаем все свойства name, id и тд
+        super(el, img); // на вход даем el -  объект товаров и получаем все свойства name, id и тд
         this.quantity = el.quantity; // количество
     }
     render(){
