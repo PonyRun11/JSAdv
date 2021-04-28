@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Интернет-магазин</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+<div id="app">
+    <header class="header" >
+
+        <div class="container header__container">
+            <div class="logo">
+                <a class="logo-link" href="index.html"> <img class="logo-img" src="./img/logo.png" alt="b">bran<span class="pink" >d</span></a>
+            </div>
+
+        <div class="cart">
+            <filter-el></filter-el>
+            <cart ref="cart"></cart>
+        </div>
+
+    </header>
+
+    <nav class="nav">
+        <div class="container nav__container">
+            <ul class="nav__ul">
+            <li class="nav__item"><a class="nav__link" href="index.html"><span class="nav_bord">home</span></a></li>
+            <li class="nav__item"><a class="nav__link" href="product.html"><span class="nav_bord">man</span></a></li>
+            <li class="nav__item"><a class="nav__link" href="single-page.html"><span class="nav_bord">woman</span></a>
+            <div class="nav__drop">
+                <div class="nav__drop__link">   
+                    <a class="browse__dropdown__title" href="#">Women</a>
+                    <a href="#">Dresses</a>
+                    <a href="#">Sweaters/Knits</a>
+                    <a href="#">Jackets/Coats</a>
+                    <a href="#">Blazers</a>
+                    <a href="#">Denim</a>
+                    <a href="#">Leggings/Pants</a>
+                    <a href="#">Skirts/Shorts</a>
+                    <a href="#">Accessories</a></div>
+                <div class="nav__drop__link">
+                    <a class="browse__dropdown__title" href="#">Women</a>
+                    <a href="#">Dresses</a>
+                    <a href="#">Sweaters/Knits</a>
+                    <a href="#">Jackets/Coats</a>
+                    <a href="#">Blazers</a>
+                    <a class="browse__dropdown__title" href="#">Women</a>
+                    <a href="#">Dresses</a>
+                    <a href="#">Sweaters/Knits</a>
+                    <a href="#">Jackets/Coats</a>
+                    <a href="#">Blazers</a>
+                </div>
+                <div class="nav__drop__link">
+                    <a class="browse__dropdown__title" href="#">Women</a>
+                    <a href="#">Dresses</a>
+                    <a href="#">Sweaters/Knits</a>
+                    <a href="#">Jackets/Coats</a>
+                    <a href="#">Blazers</a>
+                    <div class="nav__drop__sale">Super<br> sale!</div>
+                </div>
+            </div>
+            </li>
+            <li class="nav__item"><a class="nav__link" href="#"><span class="nav_bord">kids</span></a></li>
+            <li class="nav__item"><a class="nav__link" href="#"><span class="nav_bord">Accoseriese</span></a></li>
+            <li class="nav__item"><a class="nav__link" href="#"><span class="nav_bord">featured</span></a></li>
+            <li class="nav__item"><a class="nav__link" href="#"><span class="nav_bord">hot deals</span></a></li>
+        </ul>
+        </div>
+    </nav>
+    <div class="container fetured">
+        <h2 class="fetured-h2">Fetured Items</h2>
+        <p class="fetured-content">Shop for items based on what we featured in this week</p>
+    </div>
+    <main>
+        <error ref="error"></error>
+        <products ref="products"></products>
+    </main>
+</div>
+
+<section class="feedback">
+    <div class="container feedback__container">
+        <div class="reviews">
+           <div class="reviews__block">
+                <img src="img/photo.png" alt="" class="reviews__photo">
+                <p class="reviews__comment">“Vestibulum quis porttitor dui! Quisque viverra nunc mi, 
+                    a pulvinar purus condimentum a. Aliquam condimentum mattis neque sed pretium”</p>
+                <p class="reviews__name">Bin Burhan</p>
+                <p class="reviews__town">Dhaka, Bd</p>
+           </div>
+           <div class="reviews__slider">
+               <div class="reviews__slider__item">   </div>
+               <div class="reviews__slider__item reviews__slider__item-active"></div>
+               <div class="reviews__slider__item"></div>
+           </div>
+        </div>
+
+        <div class="subscription"> 
+            <div class="subscription__container">
+                <h2 class="subscription-h2">Subscribe</h2>
+                <h3 class="subscription-h3"> FOR OUR NEWLETTER AND PROMOTION</h3>
+                <form action="#" class="subscription__email">
+                    <input class="email__field" type="email" placeholder="Enter Your Email">
+                    <input class="email__btn" value="Subscribe" type="submit">
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="information container">
+    <div class="brand__information">
+        <div class="logo">
+            <a class="logo-link" href="index.html"> <img class="logo-img" src="./img/logo.png" alt="b">bran<span class="pink" >d</span></a>
+        </div>
+        <p class="content__information">Objectively transition extensive data rather than cross functional solutions. Monotonectally syndicate multidisciplinary materials before go forward benefits. Intrinsicly syndicate an expanded array of processes and cross-unit partnerships. </p>
+        <p class="content__information">Efficiently plagiarize 24/365 action items and focused infomediaries.
+            Distinctively seize superior initiatives for wireless technologies. Dynamically optimize.</p>
+    </div>
+
+    <div class="list__information">
+        <div class="company">
+            <h2 class="information-h2">COMPANY</h2>
+            <ul class="information-ul">     
+                <li class="information-li"><a href="#"></a><a href="#">Home</a></li>
+                <li class="information-li"><a href="#">Shop</a></li>
+                <li class="information-li"><a href="#">About</a></li>
+                <li class="information-li"> <a href="#">How It Works</a></li>
+                <li class="information-li"> <a href="#">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="company">
+            <h2 class="information-h2">INFORMATION</h2>
+            <ul class="information-ul"> 
+                <li class="information-li"><a href="#">Tearms & Condition</a></li>
+                <li class="information-li"><a href="#">Privacy Policy</a></li>
+                <li class="information-li"><a href="#">How to Buy</a></li>
+                <li class="information-li"><a href="#">How to sell</a></li>
+                <li class="information-li"><a href="#">Promotion</a></li>
+            </ul>
+        </div>
+
+        <div class="company">
+           <h2 class="information-h2">SHOP CATEGORY</h2>
+            <ul class="information-ul">    
+                <li class="information-li"><a href="#">Men</a></li>
+                <li class="information-li"><a href="#">Women</a></li>
+                <li class="information-li"><a href="#">Child</a></li>
+                <li class="information-li"><a href="#">Apparel</a></li>
+                <li class="information-li"><a href="#">Brows All</a></li>
+            </ul>
+        </div>
+
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container footer__container">
+        <div class="copyright">
+            <p>© 2017 Brand All Rights Reserved.</p>
+        </div>
+
+        <form class="icon__social">
+            <button class="icon__btn"><i class="fab fa-facebook-f fab__hover"></i></button>
+            <button class="icon__btn"><i class="fab fa-twitter fab__hover"></i></button>
+            <button class="icon__btn"><i class="fab fa-linkedin-in fab__hover"></i></button>
+            <button class="icon__btn"><i class="fab fa-pinterest-p fab__hover"></i></button>
+            <button class="icon__btn"><i class="fab fa-google-plus-g fab__hover"></i></button>
+
+        </form>
+    </div>
+</footer>
+
+
+
+
+
+    <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js" integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="js/ProductComponent.js"></script>
+<script src="js/CartComponent.js"></script>
+<script src="js/FilterComp.js"></script>
+<script src="js/ErrorComp.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

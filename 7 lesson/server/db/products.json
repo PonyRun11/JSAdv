@@ -1,0 +1,50 @@
+[
+  {
+    "id_product": 1,
+    "product_name": "Футболка",
+    "price": 160,
+    "img": "./img/product_1.png"
+  },
+  {
+    "id_product": 2,
+    "product_name": "Рубашка",
+    "price": 300,
+    "img": "./img/product_2.png"
+  },
+  {
+    "id_product": 3,
+    "product_name": "Куртка",
+    "price": 456,
+    "img": "./img/product_3.png"
+  },
+  {
+    "id_product": 4,
+    "product_name": "Футболка",
+    "price": 100,
+    "img": "./img/product_4.png"
+  },
+  {
+    "id_product": 5,
+    "product_name": "Блуза",
+    "price": 860,
+    "img": "./img/product_5.png"
+  },
+  {
+    "id_product": 6,
+    "product_name": "Пиджак",
+    "price": 1290,
+    "img": "./img/product_6.png"
+  },
+  {
+    "id_product": 7,
+    "product_name": "Штаны",
+    "price": 900,
+    "img": "./img/product_7.png"
+  },
+  {
+    "id_product": 8,
+    "product_name": "Толстовка",
+    "price": 780,
+    "img": "./img/product_8.png"
+  }
+]

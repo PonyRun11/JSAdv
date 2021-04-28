@@ -1,0 +1,40 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: flex-end;
+}
+.products {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.photos {
+    width: 100%;
+}
+
+.btn-cart {
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 3px;
+    border: 1px solid grey;
+    background-color: whitesmoke;
+    font-weight: 600;
+}
+
+.btn-cart:hover {
+    background-color: grey;
+}
+
+.basket {
+    margin-right: 10px;
+}
+
+
