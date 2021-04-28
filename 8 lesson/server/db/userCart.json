@@ -1,0 +1,41 @@
+{
+    "amount": 46600,
+    "countGoods": 2,
+    "contents": [
+        {
+            "id_product": 3,
+            "product_name": "Куртка",
+            "price": 1368,
+            "quantity": 8,
+            "img": "./img/product_3.png"
+        },
+        {
+            "id_product": 4,
+            "product_name": "Футболка",
+            "price": 300,
+            "quantity": 4,
+            "img": "./img/product_4.png"
+        },
+        {
+            "quantity": 1,
+            "id_product": 2,
+            "product_name": "Рубашка",
+            "price": 300,
+            "img": "./img/product_2.png"
+        },
+        {
+            "quantity": 2,
+            "id_product": 1,
+            "product_name": "Футболка",
+            "price": 160,
+            "img": "./img/product_1.png"
+        },
+        {
+            "quantity": 2,
+            "id_product": 8,
+            "product_name": "Толстовка",
+            "price": 780,
+            "img": "./img/product_8.png"
+        }
+    ]
+}
